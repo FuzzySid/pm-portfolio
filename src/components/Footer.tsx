@@ -11,7 +11,7 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-6">
-            <Link
+            {/* <Link
               href="/projects"
               className="hover:text-foreground transition-colors"
             >
@@ -22,7 +22,7 @@ export default function Footer() {
               className="hover:text-foreground transition-colors"
             >
               Writing
-            </Link>
+            </Link> */}
             <Link
               href="/about"
               className="hover:text-foreground transition-colors"
@@ -33,7 +33,7 @@ export default function Footer() {
 
           <div className="flex gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/siddhantvarma99/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors"
@@ -41,7 +41,7 @@ export default function Footer() {
               LinkedIn
             </a>
             <a
-              href="https://github.com"
+              href="http://github.com/fuzzySid"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors"

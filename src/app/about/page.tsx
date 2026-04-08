@@ -33,7 +33,7 @@ export default function AboutPage() {
 
         <div className="pt-4 flex gap-6 text-sm">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/siddhantvarma99/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground hover:text-muted-foreground transition-colors"
@@ -41,7 +41,7 @@ export default function AboutPage() {
             LinkedIn →
           </a>
           <a
-            href="https://github.com"
+            href="http://github.com/fuzzySid"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground hover:text-muted-foreground transition-colors"
@@ -49,7 +49,7 @@ export default function AboutPage() {
             GitHub →
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:sid.cd.varma@gmail.com"
             className="text-foreground hover:text-muted-foreground transition-colors"
           >
             Email →

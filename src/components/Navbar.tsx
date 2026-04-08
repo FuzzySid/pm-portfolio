@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 
 const links = [
-  { label: 'Work', href: '/projects' },
-  { label: 'Writing', href: '/blog' },
+  // { label: 'Work', href: '/projects' },
+  // { label: 'Writing', href: '/blog' },
   { label: 'About', href: '/about' },
 ]
 
