@@ -1,4 +1,4 @@
-import { blogs } from '@/.velite'
+import { blogs } from '@/lib/content'
 import { MDXContent } from '@/components/MdxComponents'
 import { Badge } from '@/components/ui/badge'
 import { notFound } from 'next/navigation'

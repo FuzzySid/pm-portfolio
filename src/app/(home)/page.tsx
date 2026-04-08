@@ -1,4 +1,4 @@
-import { blogs, projects } from '@/.velite'
+import { blogs, projects } from '@/lib/content'
 import BentoGrid from '@/components/BentoGrid'
 import BlogCard from '@/components/BlogCard'
 import Image from 'next/image'

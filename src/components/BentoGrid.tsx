@@ -1,4 +1,4 @@
-import type { Project } from '@/.velite'
+import type { Project } from '@/lib/content'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Star } from 'lucide-react'

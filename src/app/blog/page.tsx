@@ -1,4 +1,4 @@
-import { blogs } from '@/.velite'
+import { blogs } from '@/lib/content'
 import BlogCard from '@/components/BlogCard'
 
 export const metadata = { title: 'Writing' }

@@ -1,4 +1,4 @@
-import type { Blog } from '@/.velite'
+import type { Blog } from '@/lib/content'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Link from 'next/link'

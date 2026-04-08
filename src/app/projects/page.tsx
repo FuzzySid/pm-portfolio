@@ -1,4 +1,4 @@
-import { projects } from '@/.velite'
+import { projects } from '@/lib/content'
 import ProjectCard from '@/components/ProjectCard'
 
 export const metadata = { title: 'Projects' }
