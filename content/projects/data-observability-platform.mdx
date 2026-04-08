@@ -1,0 +1,34 @@
+---
+title: "Data Observability Platform"
+description: "Led end-to-end development of an internal data quality monitoring system covering 200+ pipelines across a B2B SaaS company."
+role: "Product Manager"
+impact: "Reduced mean time to detect data incidents from 4.5 hours to 18 minutes, saving an estimated $2.4M annually in downstream firefighting costs."
+techStack: ["Python", "dbt", "Airflow", "Grafana", "PostgreSQL", "React"]
+featured: true
+---
+
+## Context
+
+The data engineering team was receiving 15–20 Slack pings per week from analysts and ops leads about stale or incorrect data. Each incident required 2–4 hours of triage — manually checking pipeline logs, tracing lineage, and cross-referencing source systems.
+
+## Discovery
+
+I ran a 3-week discovery sprint with 12 stakeholders across analytics, operations, and engineering. Key findings:
+
+- **Root cause distribution**: 60% of incidents were caused by upstream schema changes, 25% by SLA breaches on third-party APIs, 15% by logic errors in transformation code
+- **Detection gap**: The average incident was 4.5 hours old before anyone noticed — usually because a downstream report looked wrong
+- **Tool gap**: Teams were using a combination of Airflow alerts (noisy), manual SQL checks (ad hoc), and a shared spreadsheet to track "known issues" (outdated)
+
+## Solution
+
+A lightweight observability layer built on top of existing infrastructure:
+
+1. **Schema change detection** — automated diffs on table schemas after each pipeline run, alerting on unexpected column additions/removals/type changes
+2. **Freshness SLAs** — configurable freshness thresholds per dataset, with on-call alerts when tables exceed their expected latency
+3. **Row count anomaly detection** — rolling z-score on daily row counts to flag unexpected spikes or drops
+
+## Outcome
+
+- Mean time to detect (MTTD): 4.5h → 18 minutes
+- Analyst trust score (quarterly survey): 6.2 → 8.7 / 10
+- Pipeline coverage: 200+ pipelines monitored across 4 data domains

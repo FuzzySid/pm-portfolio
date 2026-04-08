@@ -1,0 +1,36 @@
+---
+title: "Architect Portfolio v1"
+description: "Personal PM portfolio built with Next.js, Velite, and a SaaS-dark design system to showcase case studies and writing."
+role: "Product Manager & Developer"
+impact: "Consolidated scattered case study PDFs into a single discoverable site, reducing time-to-share work samples from 10 minutes to under 30 seconds."
+techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Velite", "Shadcn UI"]
+featured: true
+---
+
+## Overview
+
+Building a PM portfolio is itself a product problem: the audience is recruiters and hiring managers with limited attention, the content is dense case studies, and the distribution channel is a link shared in a Slack DM or email thread.
+
+## Problem Statement
+
+Most PM portfolios are either a LinkedIn profile (low signal) or a Notion doc (unpolished). Neither gives the viewer a sense of how you think *and* ship. The goal was to build something that felt like a product — not a resume.
+
+## Approach
+
+### Content-First Architecture
+
+Rather than building a CMS, I chose a file-based MDX approach with Velite. Case studies live in `/content/projects` and blog posts in `/content/blogs` as `.mdx` files. Velite validates frontmatter at build time, ensuring every post has the required metadata before it reaches production.
+
+### Design System
+
+The design language is minimal and dark — Zinc 950 background, Inter typography, and a tight spacing scale. The goal was to keep attention on the content, not the chrome.
+
+### Bento Grid Homepage
+
+The homepage uses a CSS Grid bento layout to give featured projects varying visual weight. The largest card spans 2×2 cells, pulling the eye naturally toward the highest-impact work.
+
+## Results
+
+- Build time under 3 seconds for a full content rebuild
+- Zero CMS dependencies — content is versioned in Git alongside code
+- Fully static output — deployable to any CDN

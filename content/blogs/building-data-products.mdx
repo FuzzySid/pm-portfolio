@@ -1,0 +1,36 @@
+---
+title: "Building Data Products That Teams Actually Use"
+date: "2025-03-08"
+excerpt: "Why most internal data tools fail, and a practical playbook for building ones that stick."
+tags: ["data", "internal-tools", "adoption"]
+---
+
+## The Adoption Problem
+
+Most data products fail not because of bad data — they fail because no one uses them. A beautiful dashboard that lives in a bookmark nobody clicks is a $0 ROI investment regardless of the engineering effort behind it.
+
+## Why Internal Tools Fail
+
+- **Built for the builder, not the user** — engineers build what's easy to expose, not what operators need to decide
+- **No clear job to be done** — "a dashboard for everything" is a dashboard for nothing
+- **Maintenance drift** — definitions change, the tool doesn't, trust erodes
+
+## A Better Approach
+
+### Start with a Decision
+
+Every data product should be anchored to a decision that someone needs to make on a recurring cadence. "How many orders did we ship?" is not a decision. "Should we increase driver incentives this weekend?" is.
+
+### Co-design with the Consumer
+
+Sit with the analyst, ops lead, or exec who will use the tool. Watch them do their current workflow. The gaps in their workarounds are your product requirements.
+
+### Ship the v0 in a Spreadsheet
+
+Before building anything, validate the logic in a spreadsheet and share it with the intended user. If they can't interpret it or find an error, your data model isn't ready.
+
+## Metrics That Matter for Internal Products
+
+- **Weekly active users / potential users** — adoption rate
+- **Time-to-answer** — how long does it take someone to find the number they need?
+- **Trust incidents** — how often does someone flag a metric as wrong?
