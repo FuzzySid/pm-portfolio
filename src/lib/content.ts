@@ -1,7 +1,8 @@
-import blogs from '../../.velite/blogs.json'
-import projects from '../../.velite/projects.json'
+import _blogs from '../../.velite/blogs.json'
+import _projects from '../../.velite/projects.json'
 
 import type { Blog, Project } from '@/.velite'
 
-export { blogs, projects }
+export const blogs = _blogs as Blog[]
+export const projects = _projects as Project[]
 export type { Blog, Project }

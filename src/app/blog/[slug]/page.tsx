@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
   const post = blogs.find((b) => b.slug === slug)
-  if (!post) notFound()
+  if (!post) return notFound()
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">

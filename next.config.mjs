@@ -1,13 +1,14 @@
 /** @type {import('next').NextConfig} */
+
+let veliteStarted = false
+
 const nextConfig = {
   webpack(config) {
     class VeliteWebpackPlugin {
-      static started = false
-
       apply(compiler) {
         compiler.hooks.beforeCompile.tapPromise('VeliteWebpackPlugin', async () => {
-          if (VeliteWebpackPlugin.started) return
-          VeliteWebpackPlugin.started = true
+          if (veliteStarted) return
+          veliteStarted = true
           const dev = compiler.options.mode === 'development'
           const { build } = await import('velite')
           await build({ watch: dev, clean: !dev })
