@@ -36,6 +36,8 @@ export default defineConfig({
           impact: s.string(),
           techStack: s.array(s.string()),
           featured: s.boolean().default(false),
+          order: s.number().optional(),
+          images: s.array(s.string()).optional(),
           slug: s.path(),
           body: s.mdx(),
         })

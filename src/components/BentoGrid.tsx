@@ -2,6 +2,7 @@ import type { Project } from '@/lib/content'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Star } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface Props {
@@ -40,6 +41,24 @@ export default function BentoGrid({ projects }: Props) {
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
+              )}
+              {i === 0 && project.images && project.images.length > 0 && (
+                <div className="flex gap-2 mb-4">
+                  {project.images.slice(0, 3).map((src, idx) => (
+                    <div
+                      key={idx}
+                      className="relative flex-1 aspect-[9/16] rounded-md overflow-hidden bg-muted min-w-0"
+                    >
+                      <Image
+                        src={src}
+                        alt={`${project.title} screenshot ${idx + 1}`}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 768px) 33vw, 15vw"
+                      />
+                    </div>
+                  ))}
+                </div>
               )}
               <div className="flex flex-wrap gap-1.5">
                 {project.techStack.slice(0, i === 0 ? 6 : 3).map((tech) => (

@@ -4,7 +4,10 @@ import BlogCard from '@/components/BlogCard'
 import Image from 'next/image'
 
 export default function HomePage() {
-  const featuredProjects = projects.filter((p) => p.featured).slice(0, 3)
+  const featuredProjects = projects
+    .filter((p) => p.featured)
+    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
+    .slice(0, 3)
   const recentBlogs = [...blogs]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3)
