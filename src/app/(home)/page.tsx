@@ -50,7 +50,7 @@ export default function HomePage() {
       )}
 
       {/* Recent Writing */}
-      {/* {recentBlogs.length > 0 && (
+       {recentBlogs.length > 0 && (
         <section>
           <h2 className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-6">
             Recent Writing
@@ -61,7 +61,7 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-      )} */}
+      )} 
     </div>
   )
 }

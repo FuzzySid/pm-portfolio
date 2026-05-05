@@ -23,7 +23,10 @@ export default defineConfig({
           slug: s.path(),
           body: s.mdx(),
         })
-        .transform((data) => ({ ...data, permalink: `/blog/${data.slug}` })),
+        .transform((data) => {
+          const slug = data.slug.replace(/^blogs\//, '')
+          return { ...data, slug, permalink: `/blog/${slug}` }
+        }),
     },
     projects: {
       name: 'Project',
