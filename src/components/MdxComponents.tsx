@@ -1,6 +1,7 @@
 'use client'
 
 import * as runtime from 'react/jsx-runtime'
+import NextImage from 'next/image'
 import type { ComponentPropsWithoutRef } from 'react'
 
 const components = {
@@ -69,6 +70,18 @@ const components = {
   ),
   hr: (props: ComponentPropsWithoutRef<'hr'>) => (
     <hr className="border-border my-8" {...props} />
+  ),
+  img: ({ src, alt }: ComponentPropsWithoutRef<'img'>) => (
+    <span className="block my-8 rounded-lg overflow-hidden border border-border">
+      <NextImage
+        src={typeof src === 'string' ? src : ''}
+        alt={alt ?? ''}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+    </span>
   ),
 }
 

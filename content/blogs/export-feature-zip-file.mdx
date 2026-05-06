@@ -29,6 +29,8 @@ Before writing a single line of product spec, I wanted inspiration and perspecti
 
 What I found amazed me — and not in a good way.
 
+![The category leader's data export — a raw JSON dump with no schema or labels](/blog/export-feature-zip-file/Competitor%20Analysis.png)
+
 A raw JSON file. A dump of their database without any labels, schema, or documentation explaining what that data was. This export clearly wasn't very useful for users, and even for internal engineering teams it was so unintuitive.
 
 The burden of interpretation had been placed entirely on the user. And it actually made sense when I thought about the bigger picture. Teams and PMs often treat export as an afterthought — an enterprise procurement checkbox, a compliance requirement, something to lock a deal. The feature ships and nobody looks back.
@@ -36,6 +38,8 @@ The burden of interpretation had been placed entirely on the user. And it actual
 ---
 
 ## Reframing the Problem
+
+![Four user scenarios mapped to their export needs — all sharing one thing in common](/blog/export-feature-zip-file/reframing_problem_user_scenarios_fixed.svg)
 
 When a user asks for data export, they're asking for a **handoff**.
 
@@ -51,6 +55,7 @@ I broke it down into four distinct user scenarios:
 
 4. **The researcher who recorded video or audio sessions.** They need their media files, and they need to know exactly how long those files are accessible before links expire.
 
+
 Each of these scenarios has a different definition of "useful." And all of them have one thing in common: **the user needs to be able to make sense of what they receive without having to come back and ask questions.**
 
 Now that I've reframed the problem, I know the different types of users I'm serving and distinctly what their needs are.
@@ -60,6 +65,14 @@ Now that I've reframed the problem, I know the different types of users I'm serv
 ## Designing the Solution
 
 My guiding principle: this export should feel like a handoff where **the burden of context sits with the person doing the handing off, not the person receiving it**.
+
+### The Button Has to Be Obvious
+
+Before thinking about what goes inside the export, I had to think about where a user even finds the option to export. The answer couldn't be buried in a settings menu or surfaced only when someone already knew to look.
+
+Export is a project-level action, so the CTA lives at the project level — visible on the project page itself, not tucked behind a dropdown. A researcher who has spent weeks building up a project inside the platform should immediately see that this data is theirs to take. The label matters too: "Download Project" is plain enough that it needs no tooltip. A user sees it, understands it, clicks it.
+
+![Download Project button placed at the project level, making the export CTA immediately visible](/blog/export-feature-zip-file/Download%20Project%20Button%20UI.png)
 
 ### Structure That Mirrors Mental Models
 
@@ -108,6 +121,8 @@ We surfaced the expiry date explicitly — in the export itself, and on the butt
 
 There's nothing more frustrating than clicking a download link that has silently expired. So we made expiry a visible, readable fact rather than a hidden technical constraint.
 
+![Export completion state showing the download link alongside its explicit expiry date](/blog/export-feature-zip-file/Export%20done.png)
+
 ### The Synthesis Travels With the Data
 
 One of the things users build up over time inside a research platform is cross-project synthesis. This was also our moat — we and our customers were proud of how powerful our analysis feature was. The patterns that emerged across multiple studies, the insights that connected disparate sessions — all of that lived in the platform's insights layer.
@@ -120,9 +135,15 @@ Small details say a lot about how you think about your users.
 
 Generating a full project export — packaging transcripts, media links, CSVs, and a PDF report — takes time. Long enough that a user might leave the page before it's done.
 
+The first step is to tell the user that this might take longer than usually how much they wait to see an output when they click a CTA.
+
+![Downloading indicator shown immediately after triggering the export, setting the right expectation](/blog/export-feature-zip-file/Downloading%20Indicator.png)
+
 When the export completes, the user gets a notification with their download link, regardless of whether they stayed on the page. We also store the download URL on the project, so if they come back later, the complete state is waiting for them. They don't have to re-trigger the export unless they've changed something in their project and specifically want a fresh package.
 
 The user never has to wonder what happened to their download.
+
+![Email notification delivered when the export is ready, with the download link included](/blog/export-feature-zip-file/Email.png)
 
 ---
 
