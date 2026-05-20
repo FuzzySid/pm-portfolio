@@ -1,5 +1,6 @@
-import { blogs } from '@/lib/content'
+import { blogs, externalBlogs } from '@/lib/content'
 import BlogCard from '@/components/BlogCard'
+import ExternalBlogCard from '@/components/ExternalBlogCard'
 
 export const metadata = { title: 'Writing' }
 
@@ -22,6 +23,15 @@ export default function BlogPage() {
           <BlogCard key={post.slug} post={post} />
         ))}
       </div>
+
+      <section className="mt-16">
+        <h2 className="text-2xl font-bold tracking-tight mb-6">Published Elsewhere</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {externalBlogs.map((post) => (
+            <ExternalBlogCard key={post.url} post={post} />
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

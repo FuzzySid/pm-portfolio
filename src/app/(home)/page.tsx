@@ -40,14 +40,14 @@ export default function HomePage() {
       </section>
 
       {/* Featured Work */}
-      {featuredProjects.length > 0 && (
+      {/* {featuredProjects.length > 0 && (
         <section>
           <h2 className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-6">
             Featured Work
           </h2>
           <BentoGrid projects={featuredProjects} />
         </section>
-      )}
+      )} */}
 
       {/* Recent Writing */}
        {recentBlogs.length > 0 && (
