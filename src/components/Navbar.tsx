@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 const links = [
   // { label: 'Work', href: '/projects' },
@@ -15,7 +16,7 @@ export default function Navbar() {
           href="/"
           className="font-semibold text-sm tracking-tight text-foreground hover:text-muted-foreground transition-colors"
         >
-          Siddhant Varma
+          Siddhant Varma&nbsp;&bull;
         </Link>
 
         <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -32,6 +33,8 @@ export default function Navbar() {
               )}
             </span>
           ))}
+          <Separator orientation="vertical" className="h-4 mx-1" />
+          <ThemeToggle />
         </div>
       </nav>
     </header>
