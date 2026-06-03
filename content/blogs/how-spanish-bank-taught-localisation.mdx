@@ -1,0 +1,104 @@
+---
+title: "How a Spanish Bank Reinforced Everything I Knew About Localisation"
+date: "2026-06-03"
+excerpt: "A full-circle moment: from building multilingual UIs at India's largest logistics aggregator to retaining a Spanish bank with a single prompt change."
+tags: ["product-management", "localisation", "ai", "user-research"]
+---
+
+I absolutely love some of those full circle moments that remind you how far re-applying your learnings can take you. This blog captures one of those moments.
+
+I started my career as a Programmer Analyst at India's largest logistics aggregator. In my first three months, I worked with the product team to ship a multilingual UI for E-commerce merchants in a new geography. The product helped the company expand into 6 international markets and unlock significant new revenue. I was an engineer amongst an entire product team of ~30 people. My contribution was small, but the lesson was large. **Language is not just a feature, it's a gateway to trust.**
+
+Four years later, I reapplied that lesson to retain our biggest enterprise customer.
+
+---
+
+## What is Localisation?
+
+![Localisation definition](/blog/how-spanish-bank-taught-localisation/Localisation-definition.png)
+
+Localisation is the process of adapting a product for a target market taking into account language, culture, formats, currencies, layout, and legal context. In layman's terms, it means making a product **feel like it was built for you, not just translated for you**. From a PM's eye, it's what closes the gap between what your product delivers and what a new market can actually use.
+
+---
+
+## Why Localisation Matters
+
+With localisation, your users can engage with the product in a language they can understand. This leads to better comprehension in turn deepening the adoption. To them, the product appears native — closer to what they would naturally expect.
+
+---
+
+## Building a Multilingual UI for Merchants at Shiprocket
+
+![Shiprocket localisation example](/blog/how-spanish-bank-taught-localisation/shiprocket-localisation-example.png)
+
+This excerpt is taken from the official engineering breakdown here. Interestingly, this and most of the engineering blogs were also written by me, but more on that some other time! :)
+
+When we were building Localisation for the Saudi Arabia market, we had to rethink the entire product experience. One of the most interesting nuances we dealt with was how Arabic is read right to left. So the team had to mirror full page layouts, not just swap text strings. Another tricky aspect was when currency switched to Saudi Riyal, time zones shifted to AST, and even pincode had to be dropped entirely since it doesn't exist as a concept in Saudi Arabia.
+
+Localisation here was a big product problem in itself, with nuances tied deeply to the actual user experience.
+
+As complex as the project was, there was collaboration at so many levels to bring this to life. I was directly working with Senior PMs and learnt a lot about the effects of localisation and how to narrow it down from an implementation point of view.
+
+**The result?** Merchants could navigate the platform in their native language, with the confidence that comes from a product that feels built for them. Our multilingual app captured a new market directly propelling our business growth.
+
+---
+
+## Life Was About to Come Full Circle
+
+Let's cut to 4 years later, where I was an engineer turned PM at an enterprise research startup.
+
+We had a key account, one of Spain's largest financial institutions. This account represented roughly 4% of our revenue. They had been customers for a year, and now a new team was about to be onboarded on the platform. This new team would take the qualitative research sitting in their repository on our platform, synthesize takeaways, and relay actionable insights back to their own product team.
+
+For context, our platform had a global search feature that lets any researcher walk in and ask natural language questions across the entire research repository. Here's a sneak peek of it:
+
+![Looppanel global search feature](/blog/how-spanish-bank-taught-localisation/Looppanel%20search.png)
+
+Researchers would ask questions like "What do users struggle with during onboarding?" and it would surface the most relevant notes and insights from every study in the workspace.
+
+The new team was using the search feature, getting results but struggled to act on them. The search results were all coming back in English because they were also built on top of data in English. And while the team could read English, they thought and worked in their native language: Spanish.
+
+![Looppanel search results in English](/blog/how-spanish-bank-taught-localisation/Looppanel-search-results.png)
+
+When this got escalated to the product team, my first instinct wasn't to reach for a translation layer. As a PM who thinks in both customer empathy and systems, my question was narrowing it down further. Do they care about the language of search results? Or do they care about the language of the search summary only? Are they consuming insights and takeaways from another side of the product than just search?
+
+The best way to answer these questions was a small user research call (oh I love these calls!). Sitting face to face across their team lead, I got everything I needed to know. The AI-generated summary and search results that synthesised findings from across the repository were returning in English, and that was where comprehension broke down.
+
+This distinction mattered enormously for what we built next. Now I knew search was the only touchpoint where they interacted with the product. They only cared about the search result's summary and not the individual search results because their takeaway relied heavily on the search summary. They looked at the condensed version of what the search yielded and not the individual data points.
+
+---
+
+## How Our Search Actually Worked
+
+![Search architecture flow](/blog/how-spanish-bank-taught-localisation/search_v2_architecture_flow.svg)
+
+To understand why this was solvable without rebuilding the entire search system, it helps to understand the architecture.
+
+Our search was a hybrid system that combined keyword matching with Cohere's semantic vector embeddings, weighted equally. When a researcher typed a question, it was run against two collections in our vector database: raw notes taken during or after interviews, and higher-level insights synthesised from those notes. The system returned the most relevant results, ranked by semantic similarity to the search query asked.
+
+On top of that retrieval layer sat an AI summary step. The top results were packaged into a numbered context and passed to GPT-4o with a prompt that instructed it to act as an expert UX researcher. The AI model synthesizes themes, identifies patterns, and responds with inline citations back to the source material. The researcher got back not just a list of results but a coherent, cited answer.
+
+The notes in our repository were in English. The researchers adding them were working in English. But the team consuming the output — the one that needed to translate these findings into product decisions — was Spanish-speaking.
+
+---
+
+## The Fix Was Smaller Than It Looked
+
+The insight was this: **the research data didn't need to change. The vector search didn't need to change.** All that needed to change was the language GPT-4o responded in while keeping the source citations in their original language so traceability wasn't lost.
+
+Through a feature flag that when turned on, the search query was run through a language detector before the AI summary was generated. If Spanish was detected, a single instruction was prepended to the GPT prompt:
+
+> "Please respond in Spanish. Write your summary, suggestions, and all output in Spanish. Do not translate the original source documents or citations — they should remain in their original language."
+
+That was it. The retrieved notes stayed in English. The citations stayed traceable. But the synthesis — the part the Spanish-speaking team actually needed to act on — came back in their language.
+
+![Search summary returned in Spanish](/blog/how-spanish-bank-taught-localisation/search-summary-spanish.png)
+
+Between Thursday when we had the customer check-in call and Monday when our next release was shipped, this entire feature was built from testing to production. A single language detection on the input based on a feature flag and conditional instructions to the LLM model generating the summary — that's it.
+
+**A small change in the right place.** Result? We retained our largest enterprise account safeguarding that big 4% chunk of our revenue.
+
+---
+
+PMs often get applauded for the biggest features they ship. But some of the highest-impact releases are the ones that are almost invisible.
+
+Asking the right questions early meant we never built the wrong thing. Unlike Shiprocket, where localisation touched layouts, currencies, grammar, and entire engineering systems — here it was a single prompt change to our AI summarisation pipeline. Same outcome: **a user who could finally act on what the product was telling them.**
