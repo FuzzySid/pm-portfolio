@@ -286,5 +286,83 @@
     "url": "https://blog.waldo.io/build-a-react-native-picker/",
     "thumbnail": "",
     "description": ""
+  },
+  {
+    "title": "What is data validation? Methods and examples",
+    "url": "https://www.tricentis.com/learn/data-validation",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "AI in quality assurance: Getting started with QA",
+    "url": "https://www.tricentis.com/learn/ai-quality-assurance",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "Debugging in software development explained",
+    "url": "https://www.tricentis.com/learn/debugging",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "Release planning: What is it and why is it important?",
+    "url": "https://www.tricentis.com/learn/release-planning",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "Quality assurance guide: Ensuring software excellence",
+    "url": "https://www.tricentis.com/learn/quality-assurance",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "Sanity testing: Definition, process & key benefits",
+    "url": "https://www.tricentis.com/learn/sanity-testing",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "Cross browser testing: A complete introductory guide",
+    "url": "https://www.tricentis.com/learn/cross-browser-testing",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "7 Challenges in Mobile Testing and how to solve them",
+    "url": "https://www.tricentis.com/learn/mobile-testing-challenges",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "AI-Powered testing tools: What sets them apart",
+    "url": "https://www.tricentis.com/learn/ai-testing-tools",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "React Native project structure: A best practices guide",
+    "url": "https://www.tricentis.com/learn/react-native-project-structure",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "React native scrollview 101: The best practices guide",
+    "url": "https://www.tricentis.com/learn/react-native-scrollview-101",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "React Native side menu step by step guide with examples",
+    "url": "https://www.tricentis.com/learn/react-native-side-menu-guide",
+    "thumbnail": "",
+    "description": ""
+  },
+  {
+    "title": "Enhance React Native UI: borderRadius with Testim Mobile",
+    "url": "https://www.tricentis.com/learn/react-native-border-radius",
+    "thumbnail": "",
+    "description": ""
   }
 ]
