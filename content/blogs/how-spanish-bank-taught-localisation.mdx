@@ -69,13 +69,13 @@ This distinction mattered enormously for what we built next. Now I knew search w
 
 ## How Our Search Actually Worked
 
-![Search architecture flow](/blog/how-spanish-bank-taught-localisation/search_v2_architecture_flow.svg)
+![Search architecture flow](/blog/how-spanish-bank-taught-localisation/search_v2_architecture_flow_simplified.svg)
 
 To understand why this was solvable without rebuilding the entire search system, it helps to understand the architecture.
 
-Our search was a hybrid system that combined keyword matching with Cohere's semantic vector embeddings, weighted equally. When a researcher typed a question, it was run against two collections in our vector database: raw notes taken during or after interviews, and higher-level insights synthesised from those notes. The system returned the most relevant results, ranked by semantic similarity to the search query asked.
+Our search was a hybrid system that combined keyword matching with semantic vector embeddings, weighted equally. When a researcher typed a question, it was run against two collections in our vector database: Collection 1 (raw notes from interviews) and Collection 2 (higher-level insights synthesised from those notes). The system returned the most relevant results, ranked by semantic similarity to the search query asked.
 
-On top of that retrieval layer sat an AI summary step. The top results were packaged into a numbered context and passed to GPT-4o with a prompt that instructed it to act as an expert UX researcher. The AI model synthesizes themes, identifies patterns, and responds with inline citations back to the source material. The researcher got back not just a list of results but a coherent, cited answer.
+On top of that retrieval layer sat an AI summary step. The top results were packaged into a numbered context and passed to an LLM-powered model with a prompt that instructed it to act as an expert UX researcher. The AI model synthesizes themes, identifies patterns, and responds with inline citations back to the source material. The researcher got back not just a list of results but a coherent, cited answer.
 
 The notes in our repository were in English. The researchers adding them were working in English. But the team consuming the output — the one that needed to translate these findings into product decisions — was Spanish-speaking.
 
@@ -83,7 +83,7 @@ The notes in our repository were in English. The researchers adding them were wo
 
 ## The Fix Was Smaller Than It Looked
 
-The insight was this: **the research data didn't need to change. The vector search didn't need to change.** All that needed to change was the language GPT-4o responded in while keeping the source citations in their original language so traceability wasn't lost.
+The insight was this: **the research data didn't need to change. The vector search didn't need to change.** All that needed to change was the language the LLM responded in while keeping the source citations in their original language so traceability wasn't lost.
 
 Through a feature flag that when turned on, the search query was run through a language detector before the AI summary was generated. If Spanish was detected, a single instruction was prepended to the GPT prompt:
 
