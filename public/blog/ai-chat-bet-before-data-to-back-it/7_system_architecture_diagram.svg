@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="380" fill="#0D1B2A"/>
+  <text x="400" y="34" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">SYSTEM ARCHITECTURE</text>
+
+  <!-- SPA -->
+  <rect x="40" y="90" width="140" height="70" rx="8" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="110" y="118" text-anchor="middle" fill="#56CFE1" font-size="9" letter-spacing="1">SINGLE PAGE APP</text>
+  <text x="110" y="140" text-anchor="middle" fill="#7B98B2" font-size="9">Browser client</text>
+
+  <!-- Arrow down -->
+  <line x1="110" y1="162" x2="110" y2="198" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="104,196 110,208 116,196" fill="#00C9A7"/>
+  <text x="132" y="185" fill="#00C9A7" font-size="9">HTTP POST</text>
+
+  <!-- Cloud Function -->
+  <rect x="40" y="210" width="140" height="70" rx="8" fill="#112233" stroke="#00C9A7" stroke-width="2"/>
+  <text x="110" y="238" text-anchor="middle" fill="#00C9A7" font-size="9" letter-spacing="1">SERVERLESS</text>
+  <text x="110" y="254" text-anchor="middle" fill="#00C9A7" font-size="9" letter-spacing="1">FUNCTION</text>
+  <text x="110" y="272" text-anchor="middle" fill="#7B98B2" font-size="9">action-based routing</text>
+
+  <!-- Horizontal arrow to storage -->
+  <line x1="182" y1="245" x2="250" y2="245" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="248,239 260,245 248,251" fill="#00C9A7"/>
+
+  <!-- NoSQL -->
+  <rect x="262" y="88" width="185" height="58" rx="6" fill="#112233" stroke="#F4A261" stroke-width="1.5"/>
+  <text x="354" y="114" text-anchor="middle" fill="#F4A261" font-size="9" letter-spacing="1">NOSQL DATA STORE</text>
+  <text x="354" y="133" text-anchor="middle" fill="#7B98B2" font-size="9">Conversation state · metadata</text>
+
+  <!-- Cloud Storage -->
+  <rect x="262" y="162" width="185" height="58" rx="6" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="354" y="188" text-anchor="middle" fill="#56CFE1" font-size="9" letter-spacing="1">CLOUD STORAGE</text>
+  <text x="354" y="207" text-anchor="middle" fill="#7B98B2" font-size="9">messages · summarised conv.</text>
+
+  <!-- Vector Store -->
+  <rect x="262" y="236" width="185" height="58" rx="6" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="354" y="262" text-anchor="middle" fill="#00C9A7" font-size="9" letter-spacing="1">VECTOR STORE</text>
+  <text x="354" y="281" text-anchor="middle" fill="#7B98B2" font-size="9">Transcript vectors · hybrid search</text>
+
+  <!-- Vertical connectors -->
+  <line x1="354" y1="146" x2="354" y2="162" stroke="#1A3050" stroke-width="1.5"/>
+  <line x1="354" y1="220" x2="354" y2="236" stroke="#1A3050" stroke-width="1.5"/>
+
+  <!-- Arrow to LLM gateway -->
+  <line x1="449" y1="245" x2="510" y2="245" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="508,239 520,245 508,251" fill="#00C9A7"/>
+
+  <!-- LLM Observability Gateway -->
+  <rect x="522" y="205" width="185" height="78" rx="8" fill="#112233" stroke="#7B98B2" stroke-width="1.5"/>
+  <text x="614" y="232" text-anchor="middle" fill="#7B98B2" font-size="9" letter-spacing="1">LLM OBSERVABILITY</text>
+  <text x="614" y="250" text-anchor="middle" fill="#7B98B2" font-size="9" letter-spacing="1">GATEWAY</text>
+  <text x="614" y="272" text-anchor="middle" fill="#4A6580" font-size="9">routing · fallback · logging</text>
+
+  <!-- Arrow to models -->
+  <line x1="709" y1="245" x2="735" y2="245" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="733,239 745,245 733,251" fill="#00C9A7"/>
+
+  <!-- Models stack -->
+  <rect x="747" y="178" width="30" height="138" rx="4" fill="#112233" stroke="#00C9A7" stroke-width="1"/>
+  <text x="762" y="250" text-anchor="middle" fill="#00C9A7" font-size="8" transform="rotate(90 762 250)">AI MODELS</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="380" fill="#0D1B2A"/>
+  <text x="400" y="30" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">MULTI-MODEL SELECTION — WHEN EACH MODEL IS USED</text>
+
+  <!-- Top: transcripts → tokens -->
+  <rect x="40" y="55" width="150" height="55" rx="7" fill="#112233" stroke="#7B98B2" stroke-width="1"/>
+  <text x="115" y="78" text-anchor="middle" fill="#7B98B2" font-size="9" letter-spacing="1">PROJECT</text>
+  <text x="115" y="96" text-anchor="middle" fill="#4A6580" font-size="9">N transcripts uploaded</text>
+
+  <line x1="192" y1="82" x2="235" y2="82" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="233,76 245,82 233,88" fill="#00C9A7"/>
+
+  <rect x="247" y="55" width="160" height="55" rx="7" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="327" y="78" text-anchor="middle" fill="#00C9A7" font-size="9" letter-spacing="1">TOKEN ESTIMATE</text>
+  <text x="327" y="96" text-anchor="middle" fill="#4A6580" font-size="9">Automatic calculation</text>
+
+  <!-- Token range bar -->
+  <text x="450" y="70" fill="#4A6580" font-size="9" letter-spacing="1">TOKEN RANGE</text>
+  <rect x="450" y="78" width="318" height="14" rx="3" fill="#1A3050"/>
+  <rect x="450" y="78" width="107" height="14" rx="3" fill="#00C9A7" opacity="0.8"/>
+  <rect x="557" y="78" width="68" height="14" rx="3" fill="#F4A261" opacity="0.8"/>
+  <rect x="625" y="78" width="143" height="14" rx="3" fill="#56CFE1" opacity="0.6"/>
+  <text x="503" y="88" text-anchor="middle" fill="#0D1B2A" font-size="7" font-weight="bold">0–175K</text>
+  <text x="591" y="88" text-anchor="middle" fill="#0D1B2A" font-size="7" font-weight="bold">175–275K</text>
+  <text x="696" y="88" text-anchor="middle" fill="#0D1B2A" font-size="7" font-weight="bold">275–900K</text>
+
+  <!-- Model rows -->
+  <!-- Tier 1 -->
+  <rect x="40" y="145" width="720" height="62" rx="8" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <rect x="40" y="145" width="8" height="62" rx="4" fill="#00C9A7"/>
+  <text x="68" y="168" fill="#00C9A7" font-size="10" font-weight="600">TIER 1  —  Small, lightweight, fast model</text>
+  <text x="68" y="186" fill="#7B98B2" font-size="9">Up to ~20 transcripts  ·  Cost-efficient  ·  Used for most projects</text>
+  <rect x="592" y="153" width="153" height="36" rx="5" fill="#0A1628"/>
+  <text x="668" y="172" text-anchor="middle" fill="#00C9A7" font-size="11" font-weight="bold">≤ 175,000</text>
+  <text x="668" y="186" text-anchor="middle" fill="#4A6580" font-size="8">tokens</text>
+
+  <!-- Tier 2 -->
+  <rect x="40" y="220" width="720" height="62" rx="8" fill="#112233" stroke="#F4A261" stroke-width="1.5"/>
+  <rect x="40" y="220" width="8" height="62" rx="4" fill="#F4A261"/>
+  <text x="68" y="243" fill="#F4A261" font-size="10" font-weight="600">TIER 2  —  Larger model, same reasoning quality</text>
+  <text x="68" y="261" fill="#7B98B2" font-size="9">Up to ~50 transcripts  ·  Larger context window</text>
+  <rect x="592" y="228" width="153" height="36" rx="5" fill="#0A1628"/>
+  <text x="668" y="247" text-anchor="middle" fill="#F4A261" font-size="11" font-weight="bold">≤ 275,000</text>
+  <text x="668" y="261" text-anchor="middle" fill="#4A6580" font-size="8">tokens</text>
+
+  <!-- Tier 3 -->
+  <rect x="40" y="295" width="720" height="62" rx="8" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <rect x="40" y="295" width="8" height="62" rx="4" fill="#56CFE1"/>
+  <text x="68" y="318" fill="#56CFE1" font-size="10" font-weight="600">TIER 3  —  Very large context window model</text>
+  <text x="68" y="336" fill="#7B98B2" font-size="9">Up to ~60 transcripts (annual plan)  ·  ~1M context window  ·  Final fallback</text>
+  <rect x="592" y="303" width="153" height="36" rx="5" fill="#0A1628"/>
+  <text x="668" y="322" text-anchor="middle" fill="#56CFE1" font-size="11" font-weight="bold">≤ 900,000</text>
+  <text x="668" y="336" text-anchor="middle" fill="#4A6580" font-size="8">tokens</text>
+</svg>

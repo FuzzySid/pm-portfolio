@@ -9,6 +9,8 @@ A complete BTS of an AI chat interface for qualitative research data that we bui
 
 We spent just two weeks building an AI Chat for qualitative research data. User researchers can directly chat with their data, ask questions and follow-ups. This was right around the time tools like Claude and ChatGPT started marking a shift in terms of how users were interacting with their data.
 
+![AI Chat demo](/blog/ai-chat-bet-before-data-to-back-it/ai-chat-demo-gif.gif)
+
 I vividly remember when our CEO used to demo this to a potential customer, the room would go quiet for a second. The kind of quiet that makes people's eyes pop out and their jaws drop.
 
 ![The room goes quiet](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGdobHh6cmw2OTBub2pvZmZ4MmQwbnlka3gwd2c1aXpiMXE3OTNzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S9i8jJxTvAKVHVMvvW/giphy.gif)
@@ -73,9 +75,16 @@ So we made a deliberate call: build the smallest version that could prove the hy
 
 For the beta, we limited AI Chat to projects that have fewer than 20 transcripts. We wanted the source of truth to be manageable by our system. We had ~10 enterprise customers we knew would be willing to try this on some of their recent projects and they told us none of these projects had more than 10–15 interviews.
 
+![AI Chat template selection screen](/blog/ai-chat-bet-before-data-to-back-it/ai-chat-templates.png)
+
 The initial touchpoint for this feature on the UI was an option for researchers to pick a template. We intentionally restricted users here because that would allow us to create a starting point for them. So we had two templates the user could pick — either "Summarize the study" or "Identify pain points".
 
+![AI Chat Summary selection screen](/blog/ai-chat-bet-before-data-to-back-it/ai-summary-ai-chat-Screenshot.png)
+
+
 These templates build a report based on the transcripts the system reads. The researcher can then ask follow-up questions to that report, or even anything else in that project as naturally as they'd type into ChatGPT.
+
+![AI Chat response selection screen](/blog/ai-chat-bet-before-data-to-back-it/ai-chat-response-screenshot.png)
 
 As a former engineer myself, I took a bold decision to not get into streaming or infinitely rolling chat history.
 
@@ -86,6 +95,8 @@ One of the harder product judgment calls was resisting the temptation to build a
 ## The Architecture: Simpler Than You'd Expect
 
 The brain of our AI chat feature was a single HTTP nanoservice. No WebSockets, no Server-Sent Events, no streaming at all. Every operation was dispatched via the same nanoservice. The decision to skip WebSockets is worth calling out explicitly. It made the system dramatically simpler to reason about, deploy, and debug. We knew the trade-off was latency and UX. Much aligned with my intuition, three months later, we saw how much customers trusted the output quality — and so the lack of a real-time streaming chat experience took a backseat in terms of UX for them.
+
+![System architecture diagram](/blog/ai-chat-bet-before-data-to-back-it/7_system_architecture_diagram.svg)
 
 ### Indexing Transcripts into Vector Store
 
@@ -146,6 +157,8 @@ Enter citations — the second major thing we built after the initial beta.
 
 Ever used Perplexity to generate a report based on a search query? For each response, it gives you the source of truth — called a citation — so you know what it's using to generate that report for you. You hover over each citation and see the source and it immediately gives you confidence. Not because you know AI did not hallucinate, but because you can trace where the output came from. Visibility drives trust when reviewing AI output.
 
+![AI Chat with citations](/blog/ai-chat-bet-before-data-to-back-it/citations-screenshot.png)
+
 We instruct the AI (through the system prompt for both templates) to wrap every factual claim derived from transcript data inside a custom tag. Citations weren't just limited to the initial output of the template. They were also there when you would ask a follow-up question or continue that chat conversation. Every response would have citations mapping back to a transcript chunk and in turn, mapping back to an exact moment in time in that research interview.
 
 ![Citations flow diagram](/blog/ai-chat-bet-before-data-to-back-it/12_citations_flow_diagram.svg)
@@ -177,7 +190,6 @@ A five-step pipeline processes those tags before any response reaches the user:
 
 ## Model Cascading with Larger Context Windows
 
-![What model cascading is conceptually](/blog/ai-chat-bet-before-data-to-back-it/14_model_cascading_concept.svg)
 
 A couple of months later, we wanted to put AI Chat out of beta. It was available for every new signup and was also one of those magic features our potential customers loved during the trial. We wanted to address the problem around limited context windows which led to two major constraints:
 
@@ -186,12 +198,16 @@ A couple of months later, we wanted to put AI Chat out of beta. It was available
 
 Context windows with LLMs especially in chat interfaces are a common problem. However, the easiest way to solve this enough to put the release out of beta was adding a model cascading layer.
 
+![What model cascading is conceptually](/blog/ai-chat-bet-before-data-to-back-it/14_model_cascading_concept.svg)
+
 ### Multi-Model Approach
 
 One of the biggest wins from our incremental approach was the model cascade. A three-tier fallback system that automatically selects the best model based on how large the project data is. This model cascade system by itself solved the context window problem to a large extent.
 
 
 When a project's transcript corpus is estimated to fit inside 175K tokens, we use Model 1. Larger projects fall through to Model 2, and larger still to Model 3 with its approximately ≥1M-token context window. This is what lets us expand from 20 transcripts to 50, and then up to 60 by simply using models with bigger limits.
+
+![Multi-model selection flow](/blog/ai-chat-bet-before-data-to-back-it/15_multi_model_selection_flow.svg)
 
 An important consideration before we added the model cascade was the difference in reasoning capabilities. Since there wasn't any discernible difference in the reasoning capabilities, this approach worked well for us. Model 3 required specific instructions to meet the output format that Model 1 and 2 delivered, so its prompt had to be tweaked accordingly.
 
