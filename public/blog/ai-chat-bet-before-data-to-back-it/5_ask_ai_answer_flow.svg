@@ -1,0 +1,53 @@
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="360" fill="#0D1B2A"/>
+  <text x="400" y="34" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">HOW ASK AI ANSWERS A QUESTION</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="70" width="150" height="70" rx="8" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="115" y="96" text-anchor="middle" fill="#7B98B2" font-size="9" letter-spacing="1">PM ASKS</text>
+  <text x="115" y="116" text-anchor="middle" fill="#E8F0F5" font-size="9" font-style="italic">"Did users mention</text>
+  <text x="115" y="130" text-anchor="middle" fill="#E8F0F5" font-size="9" font-style="italic">the mobile UX?"</text>
+
+  <line x1="192" y1="105" x2="222" y2="105" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="220,99 232,105 220,111" fill="#00C9A7"/>
+
+  <!-- Step 2 -->
+  <rect x="234" y="70" width="150" height="70" rx="8" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="309" y="96" text-anchor="middle" fill="#7B98B2" font-size="9" letter-spacing="1">ASK AI SEARCHES</text>
+  <text x="309" y="114" text-anchor="middle" fill="#E8F0F5" font-size="9">Scans all interview</text>
+  <text x="309" y="128" text-anchor="middle" fill="#E8F0F5" font-size="9">transcripts in project</text>
+
+  <line x1="386" y1="105" x2="416" y2="105" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="414,99 426,105 414,111" fill="#00C9A7"/>
+
+  <!-- Step 3 -->
+  <rect x="428" y="70" width="150" height="70" rx="8" fill="#112233" stroke="#F4A261" stroke-width="1.5"/>
+  <text x="503" y="96" text-anchor="middle" fill="#7B98B2" font-size="9" letter-spacing="1">FINDS EVIDENCE</text>
+  <text x="503" y="114" text-anchor="middle" fill="#E8F0F5" font-size="9">Relevant transcript</text>
+  <text x="503" y="128" text-anchor="middle" fill="#E8F0F5" font-size="9">chunks + timestamps</text>
+
+  <line x1="580" y1="105" x2="610" y2="105" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="608,99 620,105 608,111" fill="#00C9A7"/>
+
+  <!-- Step 4 -->
+  <rect x="622" y="70" width="150" height="70" rx="8" fill="#00C9A7"/>
+  <text x="697" y="96" text-anchor="middle" fill="#0D1B2A" font-size="9" letter-spacing="1" font-weight="bold">ANSWER + CITATIONS</text>
+  <text x="697" y="114" text-anchor="middle" fill="#0D1B2A" font-size="9">Direct answer with</text>
+  <text x="697" y="128" text-anchor="middle" fill="#0D1B2A" font-size="9">source timestamps</text>
+
+  <!-- Step labels -->
+  <text x="115" y="158" text-anchor="middle" fill="#4A6580" font-size="9">① Question</text>
+  <text x="309" y="158" text-anchor="middle" fill="#4A6580" font-size="9">② Semantic search</text>
+  <text x="503" y="158" text-anchor="middle" fill="#4A6580" font-size="9">③ Retrieve chunks</text>
+  <text x="697" y="158" text-anchor="middle" fill="#4A6580" font-size="9">④ Cited answer</text>
+
+  <!-- Example output box — taller with more bottom padding -->
+  <rect x="40" y="188" width="720" height="140" rx="8" fill="#112233" stroke="#1A3050" stroke-width="1"/>
+  <text x="60" y="212" fill="#00C9A7" font-size="10" font-weight="600">EXAMPLE OUTPUT</text>
+  <text x="60" y="234" fill="#E8F0F5" font-size="10">"Yes — 4 of 12 participants mentioned frustration with the mobile experience.</text>
+  <text x="60" y="252" fill="#E8F0F5" font-size="10">Specifically around slow load times on the dashboard."</text>
+  <rect x="60" y="266" width="14" height="14" rx="3" fill="#00C9A7"/>
+  <text x="79" y="277" fill="#7B98B2" font-size="9">[1] Interview with Sarah K. — 14:32</text>
+  <rect x="60" y="286" width="14" height="14" rx="3" fill="#00C9A7"/>
+  <text x="79" y="297" fill="#7B98B2" font-size="9">[2] Interview with Marcus T. — 8:47</text>
+</svg>

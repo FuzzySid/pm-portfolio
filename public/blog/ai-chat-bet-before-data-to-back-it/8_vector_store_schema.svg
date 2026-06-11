@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="380" fill="#0D1B2A"/>
+  <text x="400" y="34" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">VECTOR STORE SCHEMA</text>
+
+  <!-- Left: Transcript chunking visual -->
+  <rect x="40" y="60" width="250" height="280" rx="8" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="165" y="86" text-anchor="middle" fill="#56CFE1" font-size="10" letter-spacing="1">TRANSCRIPT</text>
+
+  <rect x="58" y="98" width="214" height="34" rx="4" fill="#1A3050"/>
+  <text x="75" y="114" fill="#7B98B2" font-size="9">[0:00] Speaker A: "The onboarding was...</text>
+  <text x="75" y="128" fill="#7B98B2" font-size="9">confusing at first, especially..."</text>
+
+  <rect x="58" y="136" width="214" height="34" rx="4" fill="#1A3050"/>
+  <text x="75" y="152" fill="#7B98B2" font-size="9">[2:14] Speaker B: "I agree, I spent...</text>
+  <text x="75" y="166" fill="#7B98B2" font-size="9">too long on the setup screen."</text>
+
+  <!-- Topic break -->
+  <line x1="58" y1="178" x2="272" y2="178" stroke="#F4A261" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="165" y="192" text-anchor="middle" fill="#F4A261" font-size="8" letter-spacing="1">— TOPIC BREAK (LLM detected) —</text>
+
+  <rect x="58" y="200" width="214" height="34" rx="4" fill="#1A3050"/>
+  <text x="75" y="216" fill="#7B98B2" font-size="9">[5:30] Speaker A: "Switching to mobile...</text>
+  <text x="75" y="230" fill="#7B98B2" font-size="9">the experience was much worse."</text>
+
+  <rect x="58" y="238" width="214" height="34" rx="4" fill="#1A3050"/>
+  <text x="75" y="254" fill="#7B98B2" font-size="9">[7:45] Speaker B: "Yes, load times on...</text>
+  <text x="75" y="268" fill="#7B98B2" font-size="9">mobile were really frustrating."</text>
+
+  <text x="165" y="318" text-anchor="middle" fill="#4A6580" font-size="9">Each group → 1 vector document</text>
+
+  <!-- Arrow -->
+  <line x1="292" y1="200" x2="338" y2="200" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="336,194 348,200 336,206" fill="#00C9A7"/>
+
+  <!-- Right: Document schema -->
+  <rect x="350" y="60" width="415" height="280" rx="8" fill="#0A1628" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="557" y="86" text-anchor="middle" fill="#00C9A7" font-size="10" letter-spacing="1">VECTOR STORE DOCUMENT</text>
+
+  <!-- Schema fields -->
+  <g font-size="10" font-family="'Courier New', monospace">
+    <text x="375" y="116" fill="#56CFE1">chunk_text</text>
+    <text x="488" y="116" fill="#4A6580">→</text>
+    <text x="504" y="116" fill="#E8F0F5">Combined transcript text for topic</text>
+
+    <text x="375" y="148" fill="#56CFE1">speakers</text>
+    <text x="488" y="148" fill="#4A6580">→</text>
+    <text x="504" y="148" fill="#E8F0F5">["Speaker A", "Speaker B"]</text>
+
+    <text x="375" y="180" fill="#F4A261">start_timestamp</text>
+    <text x="488" y="180" fill="#4A6580">→</text>
+    <text x="504" y="180" fill="#E8F0F5">5.50  (seconds)</text>
+
+    <text x="375" y="212" fill="#F4A261">end_timestamp</text>
+    <text x="488" y="212" fill="#4A6580">→</text>
+    <text x="504" y="212" fill="#E8F0F5">9.12  (seconds)</text>
+
+    <text x="375" y="244" fill="#7B98B2">projectId</text>
+    <text x="488" y="244" fill="#4A6580">→</text>
+    <text x="504" y="244" fill="#E8F0F5">Links to research project</text>
+
+    <text x="375" y="276" fill="#7B98B2">transcriptId</text>
+    <text x="488" y="276" fill="#4A6580">→</text>
+    <text x="504" y="276" fill="#E8F0F5">Links to source file</text>
+
+    <text x="375" y="308" fill="#7B98B2">group_number</text>
+    <text x="488" y="308" fill="#4A6580">→</text>
+    <text x="504" y="308" fill="#E8F0F5">Ordering within transcript</text>
+  </g>
+
+  <line x1="368" y1="128" x2="752" y2="128" stroke="#1A3050" stroke-width="1"/>
+  <line x1="368" y1="160" x2="752" y2="160" stroke="#1A3050" stroke-width="1"/>
+  <line x1="368" y1="192" x2="752" y2="192" stroke="#1A3050" stroke-width="1"/>
+  <line x1="368" y1="224" x2="752" y2="224" stroke="#1A3050" stroke-width="1"/>
+  <line x1="368" y1="256" x2="752" y2="256" stroke="#1A3050" stroke-width="1"/>
+  <line x1="368" y1="288" x2="752" y2="288" stroke="#1A3050" stroke-width="1"/>
+</svg>

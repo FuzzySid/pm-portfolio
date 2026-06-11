@@ -31,7 +31,8 @@ const components = {
   ),
   p: (props: ComponentPropsWithoutRef<'p'>) => (
     <p
-      className="font-serif text-[1.0625rem] leading-[1.85] text-foreground mb-6"
+      className="text-[1.0625rem] leading-[1.85] text-foreground mb-6"
+      style={{ fontFamily: 'var(--font-body-serif)' }}
       {...props}
     />
   ),
@@ -43,13 +44,15 @@ const components = {
   ),
   ul: (props: ComponentPropsWithoutRef<'ul'>) => (
     <ul
-      className="font-serif list-disc list-outside pl-6 space-y-2 mb-6 text-foreground text-[1.0625rem] leading-[1.85]"
+      className="list-disc list-outside pl-6 space-y-2 mb-6 text-foreground text-[1.0625rem] leading-[1.85]"
+      style={{ fontFamily: 'var(--font-body-serif)' }}
       {...props}
     />
   ),
   ol: (props: ComponentPropsWithoutRef<'ol'>) => (
     <ol
-      className="font-serif list-decimal list-outside pl-6 space-y-2 mb-6 text-foreground text-[1.0625rem] leading-[1.85]"
+      className="list-decimal list-outside pl-6 space-y-2 mb-6 text-foreground text-[1.0625rem] leading-[1.85]"
+      style={{ fontFamily: 'var(--font-body-serif)' }}
       {...props}
     />
   ),
@@ -76,25 +79,35 @@ const components = {
   ),
   blockquote: (props: ComponentPropsWithoutRef<'blockquote'>) => (
     <blockquote
-      className="font-serif italic text-[1.0625rem] leading-[1.85] border-l-2 border-border pl-5 text-muted-foreground my-8"
+      className="italic text-[1.0625rem] leading-[1.85] border-l-2 border-border pl-5 text-muted-foreground my-8"
+      style={{ fontFamily: 'var(--font-body-serif)' }}
       {...props}
     />
   ),
   hr: (props: ComponentPropsWithoutRef<'hr'>) => (
     <hr className="border-border my-10" {...props} />
   ),
-  img: ({ src, alt }: ComponentPropsWithoutRef<'img'>) => (
-    <span className="block my-10 rounded-lg overflow-hidden border border-border">
-      <NextImage
-        src={typeof src === 'string' ? src : ''}
-        alt={alt ?? ''}
-        width={0}
-        height={0}
-        sizes="100vw"
-        className="w-full h-auto"
-      />
-    </span>
-  ),
+  img: ({ src, alt }: ComponentPropsWithoutRef<'img'>) => {
+    const srcStr = typeof src === 'string' ? src : ''
+    const isExternal = srcStr.startsWith('http://') || srcStr.startsWith('https://')
+    return (
+      <span className="block my-10 rounded-lg overflow-hidden border border-border">
+        {isExternal ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={srcStr} alt={alt ?? ''} className="w-full h-auto" />
+        ) : (
+          <NextImage
+            src={srcStr}
+            alt={alt ?? ''}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto"
+          />
+        )}
+      </span>
+    )
+  },
 }
 
 function useMDXComponent(code: string) {

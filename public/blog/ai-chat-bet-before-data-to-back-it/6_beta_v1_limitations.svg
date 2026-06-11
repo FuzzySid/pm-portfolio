@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="300" fill="#0D1B2A"/>
+  <text x="400" y="34" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">BETA V1</text>
+
+  <!-- User box -->
+  <rect x="40" y="80" width="120" height="60" rx="8" fill="#112233" stroke="#7B98B2" stroke-width="1"/>
+  <text x="100" y="108" text-anchor="middle" fill="#7B98B2" font-size="22">👤</text>
+  <text x="100" y="130" text-anchor="middle" fill="#7B98B2" font-size="10">Researcher</text>
+
+  <!-- Arrow to template -->
+  <line x1="162" y1="110" x2="205" y2="110" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="203,104 215,110 203,116" fill="#00C9A7"/>
+
+  <!-- Template picker -->
+  <rect x="217" y="68" width="160" height="84" rx="8" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="297" y="90" text-anchor="middle" fill="#00C9A7" font-size="9" letter-spacing="1">PICK A TEMPLATE</text>
+  <rect x="232" y="100" width="130" height="20" rx="4" fill="#1A3050"/>
+  <text x="297" y="114" text-anchor="middle" fill="#E8F0F5" font-size="9">Summarize the study</text>
+  <rect x="232" y="124" width="130" height="20" rx="4" fill="#1A3050"/>
+  <text x="297" y="138" text-anchor="middle" fill="#E8F0F5" font-size="9">Identify pain points</text>
+
+  <!-- Arrow to AI -->
+  <line x1="379" y1="110" x2="419" y2="110" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="417,104 429,110 417,116" fill="#00C9A7"/>
+
+  <!-- AI box -->
+  <rect x="431" y="80" width="140" height="60" rx="8" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="501" y="104" text-anchor="middle" fill="#56CFE1" font-size="10" letter-spacing="1">AI GENERATES</text>
+  <text x="501" y="122" text-anchor="middle" fill="#7B98B2" font-size="9">Report from ≤20 transcripts</text>
+
+  <!-- Arrow to chat -->
+  <line x1="573" y1="110" x2="613" y2="110" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="611,104 623,110 611,116" fill="#00C9A7"/>
+
+  <!-- Chat box -->
+  <rect x="625" y="80" width="140" height="60" rx="8" fill="#112233" stroke="#F4A261" stroke-width="1.5"/>
+  <text x="695" y="104" text-anchor="middle" fill="#F4A261" font-size="10" letter-spacing="1">FOLLOW-UPS</text>
+  <text x="695" y="122" text-anchor="middle" fill="#7B98B2" font-size="9">Up to 14 more Q&amp;As</text>
+
+  <!-- Limitations section -->
+  <text x="400" y="192" text-anchor="middle" fill="#F4A261" font-size="10" letter-spacing="2">⚠  DELIBERATE LIMITATIONS IN V1</text>
+
+  <rect x="40" y="208" width="220" height="64" rx="6" fill="#1A0A00" stroke="#F4A261" stroke-width="1"/>
+  <text x="150" y="228" text-anchor="middle" fill="#F4A261" font-size="10" font-weight="600">≤ 20 transcripts</text>
+  <text x="150" y="248" text-anchor="middle" fill="#7B98B2" font-size="9">Source of truth kept</text>
+  <text x="150" y="263" text-anchor="middle" fill="#7B98B2" font-size="9">manageable for the system</text>
+
+  <rect x="290" y="208" width="220" height="64" rx="6" fill="#1A0A00" stroke="#F4A261" stroke-width="1"/>
+  <text x="400" y="228" text-anchor="middle" fill="#F4A261" font-size="10" font-weight="600">15 messages max</text>
+  <text x="400" y="248" text-anchor="middle" fill="#7B98B2" font-size="9">Token window constraint</text>
+  <text x="400" y="263" text-anchor="middle" fill="#7B98B2" font-size="9">with 20 transcripts in context</text>
+
+  <rect x="540" y="208" width="220" height="64" rx="6" fill="#1A0A00" stroke="#F4A261" stroke-width="1"/>
+  <text x="650" y="228" text-anchor="middle" fill="#F4A261" font-size="10" font-weight="600">No streaming</text>
+  <text x="650" y="248" text-anchor="middle" fill="#7B98B2" font-size="9">Plain HTTP POST only</text>
+  <text x="650" y="263" text-anchor="middle" fill="#7B98B2" font-size="9">Simpler to ship and debug</text>
+</svg>

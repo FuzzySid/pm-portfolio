@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="420" fill="#0D1B2A"/>
+  <text x="400" y="30" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">HOW AI CHAT EVOLVED — ITERATION BY ITERATION</text>
+
+  <!-- Vertical timeline line -->
+  <line x1="130" y1="60" x2="130" y2="390" stroke="#1A3050" stroke-width="2"/>
+
+  <!-- V1 -->
+  <circle cx="130" cy="80" r="14" fill="#00C9A7"/>
+  <text x="130" y="85" text-anchor="middle" fill="#0D1B2A" font-size="10" font-weight="bold">V1</text>
+
+  <rect x="158" y="58" width="610" height="62" rx="6" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="178" y="78" fill="#00C9A7" font-size="10" font-weight="600">Beta — Core chat shipped</text>
+  <text x="178" y="95" fill="#7B98B2" font-size="9">≤ 20 transcripts  ·  15 messages max  ·  2 templates  ·  No streaming</text>
+  <text x="178" y="111" fill="#4A6580" font-size="9">Limitations: transcript cap, message cap, no citations, no streaming</text>
+  <!-- Duration -->
+  <rect x="672" y="64" width="86" height="20" rx="10" fill="#00C9A7" opacity="0.15" stroke="#00C9A7" stroke-width="1"/>
+  <text x="715" y="77" text-anchor="middle" fill="#00C9A7" font-size="8">2 weeks</text>
+
+  <!-- Connector -->
+  <line x1="130" y1="94" x2="130" y2="148" stroke="#1A3050" stroke-width="2"/>
+
+  <!-- V2 -->
+  <circle cx="130" cy="162" r="14" fill="#56CFE1"/>
+  <text x="130" y="167" text-anchor="middle" fill="#0D1B2A" font-size="10" font-weight="bold">V2</text>
+
+  <rect x="158" y="140" width="610" height="62" rx="6" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="178" y="160" fill="#56CFE1" font-size="10" font-weight="600">Citations — Trust layer added</text>
+  <text x="178" y="177" fill="#7B98B2" font-size="9">Every AI claim tagged → 5-step pipeline → clickable [N] → timestamp in recording</text>
+  <text x="178" y="193" fill="#4A6580" font-size="9">Solved: hallucination trust problem  ·  Still: transcript cap + message cap</text>
+  <rect x="672" y="146" width="86" height="20" rx="10" fill="#56CFE1" opacity="0.15" stroke="#56CFE1" stroke-width="1"/>
+  <text x="715" y="159" text-anchor="middle" fill="#56CFE1" font-size="8">2 weeks</text>
+
+  <line x1="130" y1="176" x2="130" y2="230" stroke="#1A3050" stroke-width="2"/>
+
+  <!-- V3 -->
+  <circle cx="130" cy="244" r="14" fill="#F4A261"/>
+  <text x="130" y="249" text-anchor="middle" fill="#0D1B2A" font-size="10" font-weight="bold">V3</text>
+
+  <rect x="158" y="222" width="610" height="62" rx="6" fill="#112233" stroke="#F4A261" stroke-width="1.5"/>
+  <text x="178" y="242" fill="#F4A261" font-size="10" font-weight="600">Model Cascade — Out of beta</text>
+  <text x="178" y="259" fill="#7B98B2" font-size="9">3-tier model selection (o3-mini → gpt-5.1 → gemini-2.5-pro)  ·  50 → 60 transcript support</text>
+  <text x="178" y="275" fill="#4A6580" font-size="9">Solved: transcript cap  ·  Still: message cap on long conversations</text>
+  <rect x="672" y="228" width="86" height="20" rx="10" fill="#F4A261" opacity="0.15" stroke="#F4A261" stroke-width="1"/>
+  <text x="715" y="241" text-anchor="middle" fill="#F4A261" font-size="8">1 week</text>
+
+  <line x1="130" y1="258" x2="130" y2="312" stroke="#1A3050" stroke-width="2"/>
+
+  <!-- V4 -->
+  <circle cx="130" cy="326" r="14" fill="#00C9A7" stroke="#00C9A7"/>
+  <text x="130" y="331" text-anchor="middle" fill="#0D1B2A" font-size="10" font-weight="bold">V4</text>
+
+  <rect x="158" y="304" width="610" height="62" rx="6" fill="#112233" stroke="#00C9A7" stroke-width="2"/>
+  <text x="178" y="324" fill="#00C9A7" font-size="10" font-weight="600">Conversation Summarisation — Unlimited history</text>
+  <text x="178" y="341" fill="#7B98B2" font-size="9">50% token threshold triggers LLM compression  ·  Infinite follow-ups practically</text>
+  <text x="178" y="357" fill="#4A6580" font-size="9">Solved: message cap  ·  Limitations: compression is lossy (acceptable trade-off)</text>
+  <rect x="672" y="310" width="86" height="20" rx="10" fill="#00C9A7" opacity="0.15" stroke="#00C9A7" stroke-width="1"/>
+  <text x="715" y="323" text-anchor="middle" fill="#00C9A7" font-size="8">2 weeks</text>
+
+  <!-- Bottom summary -->
+  <rect x="40" y="386" width="720" height="22" rx="5" fill="#112233"/>
+  <text x="400" y="401" text-anchor="middle" fill="#4A6580" font-size="9">Prove concept → Build trust → Scale capacity → Remove ceiling  ·  Each release: 1–2 weeks</text>
+</svg>

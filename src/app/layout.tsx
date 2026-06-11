@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display } from 'next/font/google'
+import { Playfair_Display, Merriweather } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -9,6 +9,14 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--app-font-serif',
   display: 'swap',
+})
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  variable: '--app-font-body-serif',
+  display: 'swap',
+  weight: ['300', '400', '700'],
+  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
@@ -26,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={playfair.variable} suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${merriweather.variable}`} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
         <ThemeProvider>
           <Navbar />

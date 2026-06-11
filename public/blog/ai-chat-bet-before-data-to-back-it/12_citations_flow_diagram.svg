@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="300" fill="#0D1B2A"/>
+  <text x="400" y="30" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">HOW CITATIONS MAP TO TRANSCRIPT MOMENTS</text>
+
+  <!-- User question -->
+  <rect x="40" y="60" width="140" height="50" rx="6" fill="#112233" stroke="#7B98B2" stroke-width="1"/>
+  <text x="110" y="82" text-anchor="middle" fill="#7B98B2" font-size="9">User asks a</text>
+  <text x="110" y="98" text-anchor="middle" fill="#7B98B2" font-size="9">follow-up question</text>
+
+  <line x1="182" y1="85" x2="214" y2="85" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="212,79 224,85 212,91" fill="#00C9A7"/>
+
+  <!-- AI model -->
+  <rect x="226" y="60" width="140" height="50" rx="6" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="296" y="82" text-anchor="middle" fill="#56CFE1" font-size="9">AI generates response</text>
+  <text x="296" y="98" text-anchor="middle" fill="#56CFE1" font-size="9">with &lt;CITATION&gt; tags</text>
+
+  <line x1="368" y1="85" x2="400" y2="85" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="398,79 410,85 398,91" fill="#00C9A7"/>
+
+  <!-- Citation pipeline box -->
+  <rect x="412" y="48" width="160" height="74" rx="6" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="492" y="70" text-anchor="middle" fill="#00C9A7" font-size="9" letter-spacing="1">CITATION PIPELINE</text>
+  <text x="492" y="88" text-anchor="middle" fill="#7B98B2" font-size="8">Extract → Search → Validate</text>
+  <text x="492" y="104" text-anchor="middle" fill="#7B98B2" font-size="8">Group → Attach</text>
+
+  <line x1="574" y1="85" x2="606" y2="85" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="604,79 616,85 604,91" fill="#00C9A7"/>
+
+  <!-- Final output -->
+  <rect x="618" y="60" width="150" height="50" rx="6" fill="#00C9A7"/>
+  <text x="693" y="82" text-anchor="middle" fill="#0D1B2A" font-size="9" font-weight="bold">Answer + [N] citation</text>
+  <text x="693" y="98" text-anchor="middle" fill="#0D1B2A" font-size="9">markers rendered</text>
+
+  <!-- Bottom: citation click flow -->
+  <text x="400" y="150" text-anchor="middle" fill="#4A6580" font-size="10" letter-spacing="1">ON CLICK — CITATION RESOLVES TO:</text>
+
+  <rect x="60" y="168" width="200" height="60" rx="6" fill="#112233" stroke="#00C9A7" stroke-width="1"/>
+  <text x="160" y="192" text-anchor="middle" fill="#00C9A7" font-size="9" font-weight="600">Transcript chunk</text>
+  <text x="160" y="210" text-anchor="middle" fill="#7B98B2" font-size="8">Exact supporting quote</text>
+  <text x="160" y="224" text-anchor="middle" fill="#7B98B2" font-size="8">Speaker name</text>
+
+  <text x="290" y="202" text-anchor="middle" fill="#1A3050" font-size="20">→</text>
+
+  <rect x="310" y="168" width="200" height="60" rx="6" fill="#112233" stroke="#56CFE1" stroke-width="1"/>
+  <text x="410" y="192" text-anchor="middle" fill="#56CFE1" font-size="9" font-weight="600">Source transcript</text>
+  <text x="410" y="210" text-anchor="middle" fill="#7B98B2" font-size="8">File name + interview ID</text>
+  <text x="410" y="224" text-anchor="middle" fill="#7B98B2" font-size="8">Researcher who ran it</text>
+
+  <text x="540" y="202" text-anchor="middle" fill="#1A3050" font-size="20">→</text>
+
+  <rect x="560" y="168" width="200" height="60" rx="6" fill="#112233" stroke="#F4A261" stroke-width="1"/>
+  <text x="660" y="192" text-anchor="middle" fill="#F4A261" font-size="9" font-weight="600">Exact moment in recording</text>
+  <text x="660" y="210" text-anchor="middle" fill="#7B98B2" font-size="8">Timestamp (e.g. 14:32)</text>
+  <text x="660" y="224" text-anchor="middle" fill="#7B98B2" font-size="8">"Jump to file" link</text>
+
+  <text x="400" y="268" text-anchor="middle" fill="#4A6580" font-size="9" font-style="italic">Every AI claim — whether in initial analysis or a follow-up — maps back to an exact moment in a real interview</text>
+</svg>

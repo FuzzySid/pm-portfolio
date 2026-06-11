@@ -1,0 +1,60 @@
+<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="340" fill="#0D1B2A"/>
+  <text x="400" y="30" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">WHAT IS MODEL CASCADING?</text>
+
+  <!-- Input: project data -->
+  <rect x="40" y="110" width="140" height="70" rx="8" fill="#112233" stroke="#7B98B2" stroke-width="1.5"/>
+  <text x="110" y="135" text-anchor="middle" fill="#7B98B2" font-size="10" letter-spacing="1">PROJECT DATA</text>
+  <text x="110" y="155" text-anchor="middle" fill="#4A6580" font-size="9">N transcripts</text>
+  <text x="110" y="170" text-anchor="middle" fill="#4A6580" font-size="9">estimated tokens</text>
+
+  <!-- Arrow -->
+  <line x1="182" y1="145" x2="220" y2="145" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="218,139 230,145 218,151" fill="#00C9A7"/>
+  <text x="201" y="136" text-anchor="middle" fill="#4A6580" font-size="8">token</text>
+  <text x="201" y="158" text-anchor="middle" fill="#4A6580" font-size="8">estimate</text>
+
+  <!-- Decision box -->
+  <rect x="232" y="100" width="130" height="90" rx="8" fill="#112233" stroke="#00C9A7" stroke-width="2"/>
+  <text x="297" y="126" text-anchor="middle" fill="#00C9A7" font-size="9" letter-spacing="1">TOKEN COUNT?</text>
+  <line x1="232" y1="145" x2="362" y2="145" stroke="#1A3050" stroke-width="1"/>
+  <text x="297" y="162" text-anchor="middle" fill="#4A6580" font-size="9">Automatic selection</text>
+  <text x="297" y="176" text-anchor="middle" fill="#4A6580" font-size="9">No user config needed</text>
+
+  <!-- Arrow to tier 1 -->
+  <line x1="362" y1="125" x2="430" y2="88" stroke="#00C9A7" stroke-width="1.5"/>
+  <polygon points="427,81 438,90 430,96" fill="#00C9A7"/>
+
+  <!-- Arrow to tier 2 -->
+  <line x1="362" y1="145" x2="430" y2="170" stroke="#F4A261" stroke-width="1.5"/>
+  <polygon points="428,164 440,172 430,178" fill="#F4A261"/>
+
+  <!-- Arrow to tier 3 -->
+  <line x1="362" y1="165" x2="430" y2="242" stroke="#56CFE1" stroke-width="1.5"/>
+  <polygon points="428,236 440,244 430,250" fill="#56CFE1"/>
+
+  <!-- Tier 1 -->
+  <rect x="442" y="60" width="290" height="54" rx="6" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="462" y="82" fill="#00C9A7" font-size="9" font-weight="600">TIER 1 — Small, lightweight, fast</text>
+  <text x="462" y="100" fill="#7B98B2" font-size="9">≤ 175K tokens  ·  Primary default</text>
+  <rect x="610" y="68" width="108" height="8" rx="2" fill="#1A3050"/>
+  <rect x="610" y="68" width="50" height="8" rx="2" fill="#00C9A7"/>
+
+  <!-- Tier 2 -->
+  <rect x="442" y="144" width="290" height="54" rx="6" fill="#112233" stroke="#F4A261" stroke-width="1.5"/>
+  <text x="462" y="166" fill="#F4A261" font-size="9" font-weight="600">TIER 2 — Larger, same reasoning quality</text>
+  <text x="462" y="184" fill="#7B98B2" font-size="9">≤ 275K tokens  ·  Fallback 1</text>
+  <rect x="610" y="152" width="108" height="8" rx="2" fill="#1A3050"/>
+  <rect x="610" y="152" width="76" height="8" rx="2" fill="#F4A261"/>
+
+  <!-- Tier 3 -->
+  <rect x="442" y="218" width="290" height="54" rx="6" fill="#112233" stroke="#56CFE1" stroke-width="1.5"/>
+  <text x="462" y="240" fill="#56CFE1" font-size="9" font-weight="600">TIER 3 — Very large context window</text>
+  <text x="462" y="258" fill="#7B98B2" font-size="9">≤ 900K tokens  ·  ~1M context  ·  Final fallback</text>
+  <rect x="610" y="226" width="108" height="8" rx="2" fill="#1A3050"/>
+  <rect x="610" y="226" width="104" height="8" rx="2" fill="#56CFE1"/>
+
+  <!-- Note -->
+  <rect x="40" y="292" width="720" height="30" rx="5" fill="#112233"/>
+  <text x="400" y="311" text-anchor="middle" fill="#4A6580" font-size="9">Users never see which model is running. Selection is automatic, silent, and based entirely on project size.</text>
+</svg>

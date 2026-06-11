@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="400" fill="#0D1B2A"/>
+  <text x="400" y="34" text-anchor="middle" fill="#7B98B2" font-size="11" letter-spacing="3">HOW FOLLOW-UPS MAINTAINED CONVERSATION CONTEXT</text>
+
+  <!-- Message 1: Initial -->
+  <rect x="40" y="60" width="720" height="48" rx="6" fill="#112233" stroke="#00C9A7" stroke-width="1.5"/>
+  <text x="60" y="80" fill="#00C9A7" font-size="9" letter-spacing="1" font-weight="600">MSG 1 — INITIAL AI RESPONSE</text>
+  <text x="60" y="98" fill="#7B98B2" font-size="9">[system_prompt]  +  [transcript_context: 20 transcripts]  +  [template: summarize]  →  AI analysis output</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="110" x2="400" y2="130" stroke="#1A3050" stroke-width="1.5"/>
+
+  <!-- Message 2: Follow-up 1 -->
+  <rect x="40" y="132" width="720" height="48" rx="6" fill="#112233" stroke="#56CFE1" stroke-width="1"/>
+  <text x="60" y="152" fill="#56CFE1" font-size="9" letter-spacing="1" font-weight="600">MSG 2 — FOLLOW-UP #1</text>
+  <text x="60" y="170" fill="#7B98B2" font-size="9">[msg_1]  +  [user: "Did anyone mention mobile?"]  +  [ai_response]  →  sent as full context</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="182" x2="400" y2="202" stroke="#1A3050" stroke-width="1.5"/>
+
+  <!-- Message 3 -->
+  <rect x="40" y="204" width="720" height="48" rx="6" fill="#112233" stroke="#56CFE1" stroke-width="1"/>
+  <text x="60" y="224" fill="#56CFE1" font-size="9" letter-spacing="1" font-weight="600">MSG 3 — FOLLOW-UP #2</text>
+  <text x="60" y="242" fill="#7B98B2" font-size="9">[msg_1]  +  [msg_2]  +  [user: "What about desktop?"]  +  [ai_response]  →  full thread in context</text>
+
+  <!-- Growing context indicator -->
+  <line x1="400" y1="254" x2="400" y2="274" stroke="#1A3050" stroke-width="1.5"/>
+
+  <!-- N messages -->
+  <rect x="40" y="276" width="720" height="48" rx="6" fill="#112233" stroke="#F4A261" stroke-width="1.5"/>
+  <text x="60" y="296" fill="#F4A261" font-size="9" letter-spacing="1" font-weight="600">MSG 15 — FOLLOW-UP #14  (MAX IN V1)</text>
+  <text x="60" y="314" fill="#7B98B2" font-size="9">[msg_1 … msg_14]  +  [user question]  →  context window approaching limit</text>
+
+  <!-- Right side: JSON working memory label -->
+  <rect x="680" y="68" width="72" height="248" rx="5" fill="#0A1628" stroke="#1A3050" stroke-width="1"/>
+  <text x="716" y="200" text-anchor="middle" fill="#4A6580" font-size="9" transform="rotate(90 716 200)">JSON array — working memory per call</text>
+
+  <!-- Token bar growing -->
+  <rect x="40" y="346" width="720" height="18" rx="4" fill="#1A3050"/>
+  <rect x="40" y="346" width="180" height="18" rx="4" fill="#00C9A7" opacity="0.7"/>
+  <rect x="40" y="346" width="360" height="18" rx="4" fill="#F4A261" opacity="0.4"/>
+  <rect x="40" y="346" width="600" height="18" rx="4" fill="#F4A261" opacity="0.2"/>
+  <text x="50" y="360" fill="#0D1B2A" font-size="8" font-weight="600">MSG 1</text>
+  <text x="230" y="360" fill="#0D1B2A" font-size="8">MSG 5</text>
+  <text x="450" y="360" fill="#F4A261" font-size="8">MSG 10</text>
+  <text x="630" y="360" fill="#F4A261" font-size="8" font-weight="600">MSG 15 ← limit</text>
+  <text x="400" y="390" text-anchor="middle" fill="#4A6580" font-size="9">Token usage grows with every follow-up — context window fills as conversation deepens</text>
+</svg>
